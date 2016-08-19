@@ -1,5 +1,5 @@
-#ifndef ABILITIES_H
-#define ABILITIES_H
+#ifndef EFFECTS_H
+#define EFFECTS_H
 
 
 #include "item.h"
