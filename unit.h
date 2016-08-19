@@ -2,7 +2,7 @@
 #define UNIT_H
 #include "unit.h"
 #include "item.h"
-//#include "inventory.h"
+#include "inventory.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -81,8 +81,10 @@ public:
 	void attackUnit(Unit&);//
 	int distanceTo(const int, const int);
 
+
+
 //*********Inventory************
-	
+/*
 	struct inventory{
   	//main container for inventory
   	vector<Item> invContainer;
@@ -100,9 +102,11 @@ public:
  	 	inventory& operator = (const inventory&);
 
 	};
-	
+
+	*/
+
 	//Unit's own inventory and function to display
-	inventory inv;
+	Inventory inv;
 	void displayInv();//
 	void lootUnit(string,Unit&);
 

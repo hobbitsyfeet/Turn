@@ -23,19 +23,22 @@ int main(){
  	// Chart worlds;
   Turn playerTurn;
   string option;
-  int numPlayers, i;//initialize i for importance to keep value from for loop
+  int i;//initialize i for importance to keep value from for loop
+	int temp;
 
   //start
   welcome("banners/banner.txt");
   cout<<"How many players?";
-  cin>>numPlayers;
+  cin>>temp;
+
+  const int numPlayers = temp;
 
   	//clear screen<< turn
     cout << "\x1B[2J\x1B[H";
 	welcome("banners/banner.txt");
 
   //create array of number of players
-  string playerList[numPlayers];
+  string *playerList = new string[numPlayers];
 
   //place players into array
   for( i = 0;  i< numPlayers; i++){
@@ -58,6 +61,7 @@ int main(){
 	}
 	while(option == "yes");
 
+delete [] playerList;
 cout<<"Good Bye!";
 return 0;
 }

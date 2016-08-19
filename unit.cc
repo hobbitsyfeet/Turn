@@ -1,6 +1,6 @@
 #include "unit.h"
 #include "item.h"
-//#include "inventory.h"
+#include "inventory.h"
 #include <cmath>
 //#include <ifstream>
 //#include <ofstream>
@@ -455,7 +455,7 @@ istream& operator >> (istream& iStr, Unit& i){
 //************************************************************************
 
 
-
+/*
 //Function:displayInv
 //prints out every item in inventory
 void Unit::displayInv(){
@@ -565,3 +565,4 @@ Unit::inventory& Unit::inventory::operator = (const inventory& i){
     this->pickUp(*it);
   }
 }
+*/

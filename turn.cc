@@ -35,7 +35,7 @@ void Turn::run(string playername){
 
       //**INVENTORY**
     if(option == "inv"){
-      player.displayInv();
+      player.inv.displayInv();
     }
 
 		else if(option == "path"){
@@ -89,7 +89,7 @@ void Turn::run(string playername){
 		}
 		else if(option =="loot"){
 			if(target.getHealth() == 0){
-				target.displayInv();
+				target.inv.displayInv();
 				cout<<endl<<"choose an item";
 				cin>>option;
 				if(option!="nothing")
@@ -101,7 +101,7 @@ void Turn::run(string playername){
 			else cout<<"Cannot loot";
 		}
 		else if(option == "give"){
-			player.displayInv();
+			player.inv.displayInv();
 			cout<<endl<<"what to give>>";
 			cin>>option;
      	 if(option != "nothing")
@@ -197,7 +197,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 			}
 
 			else if(option == "east" || option == "right"){
-				for(int i =0; i<dist;i++){	
+				for(int i =0; i<dist;i++){
 					if( world.canEnter(player.getPosX()+1, player.getPosY() ) ==false ){
 						//increment X
 						player.posX += 1;
@@ -206,7 +206,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 							world.setSpawn('O',player.posX,player.posY);
 							spawning = false;
 							break;
-						}	
+						}
 					}
 					else{
 						break;
@@ -215,7 +215,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 			}
 
 			else if(option == "south" || option == "down"){
-				for(int i =0; i<dist;i++){	
+				for(int i =0; i<dist;i++){
 					if( world.canEnter(player.getPosX(), player.getPosY()-1 ) ==false ){
 						//decrement Y
 					player.posY -=1;
@@ -233,7 +233,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 			}
 
 			else if(option == "west" || option == "left"){
-				for(int i =0; i<dist;i++){	
+				for(int i =0; i<dist;i++){
 					if( world.canEnter(player.getPosX()-1, player.getPosY() ) ==false ){
 						//decrement X
 						player.posX -=1;

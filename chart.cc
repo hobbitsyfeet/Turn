@@ -10,7 +10,6 @@
 #include <vector>
 using namespace std;
 
-
 Chart::Chart(string ChartName,int ChartWidth, int ChartHeight, bool FoW){
 	chartWidth = ChartWidth;
 	chartHeight = ChartHeight;
@@ -58,7 +57,7 @@ void Chart::loadWorld(string name){
 	//arrays for multiple portals
 	int portalx [numPortal];
 	int portaly [numPortal];
-	string portalNames[numPortal];
+	string *portalNames = new string[numPortal];
 
 	//setting portal name and coords into arrays
 	for(int i = 0; i<numPortal; i++){
@@ -103,7 +102,7 @@ void Chart::loadWorld(string name){
 			}
 			block.posX = x;
 			block.posY = y;
-			//assign the map iterator to 
+			//assign the map iterator to
 			*col= block;
 			block = block_reset;
 
@@ -115,6 +114,7 @@ void Chart::loadWorld(string name){
 		//move down a row
 		y--;
 	}
+	delete [] portalNames;
 	fin.close();
 	cout<<"Done Loading."<<endl;
 
@@ -150,7 +150,7 @@ void Chart::displayRange(int centrePosX,int centrePosY, int radius){
  			 dist = sqrt( ( (col->getPosX() - centrePosX)*(col->getPosX() - centrePosX) )
    		 + 	 ( col->getPosY() - centrePosY)*(col->getPosY() - centrePosY) );
 
-  
+
 
   		if(getFogOfWar()){
   			if(dist <= radius){

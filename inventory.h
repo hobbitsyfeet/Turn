@@ -1,5 +1,5 @@
-#ifndef CHART_H
-#define CHART_H
+#ifndef INVENTORY_H
+#define INVENTORY_H
 
 //#include "unit.h"
 //#include "turn.h"
@@ -8,6 +8,7 @@
 using namespace std;
 
 class Inventory{
+  friend class Unit;
 public:
 vector<Item> invContainer;
 
@@ -22,6 +23,8 @@ vector<Item> invContainer;
  	 	bool searchWeaponEquipped();
  	 	Item& getItemEquipped();
  	 	Item getSearch(Item);
+
+    void sortInv();
 
 
 private:

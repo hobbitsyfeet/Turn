@@ -1,6 +1,7 @@
 #include "inventory.h"
 #include <vector>
 #include <fstream>
+#include <algorithm>
 
 using namespace std;
 //Function:displayInv
@@ -105,5 +106,11 @@ Item& Inventory::getItemEquipped(){
   return temp;
 }
 
+void Inventory::sortInv(){
+
+}
+
 Inventory& Inventory::operator= (const Inventory& i){
+  invContainer = i.invContainer;
+  return *this;
 }

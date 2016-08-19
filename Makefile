@@ -2,7 +2,7 @@ CCC= g++
 LOGFILE=$(LOGPATH)`date +'%h:%d:%Y:%l.%M%.%S%p'`
 
 all : game
-game : main.o unit.o item.o turn.o chart.o
+game : main.o unit.o item.o turn.o chart.o inventory.o
 	$(CCC) $^ -o $@
 
 
