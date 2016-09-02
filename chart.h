@@ -16,6 +16,7 @@ class Chart{
 		//contains
 			//bool canEnter(int,int);
 			bool checkAvailable();
+			void setOccupance(bool);
 			bool getOccupance();
 			char getGeoType();
 			void displayType();
@@ -27,6 +28,7 @@ class Chart{
 			bool occupied;
 			char geoType;
 			string link;
+			//Inventory box;
 	};
 	//2D vector
 	vector< vector<container> > world;
@@ -44,6 +46,7 @@ class Chart{
 	void displayWorld();
 	void loadWorld(string);
 	void saveWorld(string);
+	void setCanEnter(int,int,bool);
 	bool canEnter(int,int);
 	void setSpawn(char, int&, int&);
 	void displayRange(int, int,int);

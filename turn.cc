@@ -177,6 +177,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 			cout<<"how much>>"<<endl;
 
 			cin>>dist;
+			world.setCanEnter(player.getPosX(),player.getPosY(),false);
 			if(option == "north" || option == "up"){
 				for(int i =0; i<dist;i++){
 					//cout<<i;
@@ -194,6 +195,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 						break;
 					}
 				}
+				world.setCanEnter(player.getPosX(),player.getPosY(),true);
 			}
 
 			else if(option == "east" || option == "right"){
@@ -212,6 +214,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 						break;
 						}
 				}
+				world.setCanEnter(player.getPosX(),player.getPosY(),true);
 			}
 
 			else if(option == "south" || option == "down"){
@@ -230,6 +233,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 						break;
 						}
 				}
+				world.setCanEnter(player.getPosX(),player.getPosY(),true);
 			}
 
 			else if(option == "west" || option == "left"){
@@ -249,6 +253,7 @@ void Turn::movePlayer(Unit& player, Chart& world){
 						return;
 					}
 				}
+				world.setCanEnter(player.getPosX(),player.getPosY(),true);
 			}
 			cout<<world.getChartName()<<endl;
 			world.displayRange(player.getPosX(),player.getPosY(),5);

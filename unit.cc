@@ -478,7 +478,7 @@ void Unit::inventory::dropItem(Item a){
    a.itemUnequip();
 }
 
-//***********FILE************
+
 //Function: saveInventory
 //similar to save Unit
 //prints unit's inventory to file
